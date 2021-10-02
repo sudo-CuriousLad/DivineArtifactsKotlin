@@ -19,9 +19,9 @@ import net.minecraft.world.World
 
 class ChannelingTable : Block(FabricBlockSettings.of(Material.METAL).strength(4.0f)) {
     val CHARGED = BooleanProperty.of("charged")
-
-    //val defaultState = getStateManager().defaultState.with(CHARGED, false)
-
+    init {
+        val defaultState = getStateManager().defaultState.with(CHARGED, false)
+    }
     override fun appendProperties(stateManager: StateManager.Builder<Block?, BlockState?>) {
         stateManager.add(CHARGED)
     }

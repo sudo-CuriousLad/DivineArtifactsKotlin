@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "divine_artifacts:block/channeling_table"
+      "model": "divineartifacts:block/channeling_table"
 
     }
   }
