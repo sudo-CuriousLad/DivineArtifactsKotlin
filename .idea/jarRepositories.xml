@@ -31,5 +31,10 @@
       <option name="name" value="UserLocalRemappedMods" />
       <option name="url" value="file:$PROJECT_DIR$/Example%20Mod/.gradle/loom-cache/remapped_mods/" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven" />
+      <option name="name" value="maven" />
+      <option name="url" value="https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/" />
+    </remote-repository>
   </component>
 </project>

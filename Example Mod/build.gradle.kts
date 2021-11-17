@@ -13,9 +13,7 @@ val mavenGroup: String by project
 group = mavenGroup
 minecraft {}
 repositories {
-
-
-
+    maven { url = uri("https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/") }
 }
 dependencies {
     val minecraftVersion: String by project
@@ -28,6 +26,8 @@ dependencies {
     modImplementation("net.fabricmc.fabric-api:fabric-api:$fabricVersion")
     val fabricKotlinVersion: String by project
     modImplementation("net.fabricmc:fabric-language-kotlin:$fabricKotlinVersion")
+
+    modImplementation("software.bernie.geckolib:geckolib-fabric-1.17:3.0.13:dev")
 
 }
 tasks {
