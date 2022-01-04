@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "": {
+      "model": "divineartifacts:geo/blessed_container.json"
+
+    }
+  }
+}

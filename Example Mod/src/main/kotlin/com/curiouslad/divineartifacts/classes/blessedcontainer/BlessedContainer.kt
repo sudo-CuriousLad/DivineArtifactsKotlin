@@ -1,4 +1,4 @@
-package com.curiouslad.divineartifacts.classes
+package com.curiouslad.divineartifacts.classes.blessedcontainer
 
 import com.curiouslad.divineartifacts.interfaces.ImplementedInventory
 import com.curiouslad.divineartifacts.items.ModItems
@@ -34,9 +34,7 @@ class BlessedContainer : Block(FabricBlockSettings.of(Material.METAL).strength(4
         return BlessedContainerEntity(pos, state)
     }
 
-    override fun getRenderType(state: BlockState?): BlockRenderType {
-        return BlockRenderType.ENTITYBLOCK_ANIMATED
-    }
+
 
 
     override fun onUse(
@@ -73,60 +71,9 @@ class BlessedContainer : Block(FabricBlockSettings.of(Material.METAL).strength(4
 
 }
 
-class BlessedContainerEntity(pos: BlockPos?, state: BlockState?) :
-    BlockEntity(ModItems.BLESSED_CONTAINER_ENTITY, pos, state), ImplementedInventory, IAnimatable {
-    private var number = 7
-    private val factory = AnimationFactory(this)
-    // Serialize the BlockEntity
-    override fun writeNbt(tag: NbtCompound): NbtCompound {
-        super.writeNbt(tag)
-
-        // Save the current value of the number to the tag
-        tag.putInt("number", number)
-        return tag
-    }
-
-    override val items: DefaultedList<ItemStack?> = DefaultedList.ofSize(2, ItemStack.EMPTY)
-
-    override fun markDirty() {
-        TODO("Not yet implemented")
-    }
-
-    override fun readNbt(tag: NbtCompound) {
-        super.readNbt(tag)
-        number = tag.getInt("number")
-    }
-
-    private fun <E : IAnimatable?> predicate(event: AnimationEvent<E>): PlayState? {
-        event.controller.setAnimation(AnimationBuilder().addAnimation("animation.blessed_container.open", false))
-        return PlayState.CONTINUE
-    }
-
-    override fun registerControllers(p0: AnimationData) {
-        p0.addAnimationController(AnimationController(this, "controller", 0f, this::predicate))
-    }
-
-    override fun getFactory(): AnimationFactory {
-        return factory
-    }
 
 
-}
 
-class BlessedContainerModel : AnimatedGeoModel<BlessedContainerEntity>() {
-    override fun getModelLocation(`object`: BlessedContainerEntity?): Identifier {
-        return Identifier(GeckoLib.ModID, "geo/blessed_container.geo.json")
-    }
-
-    override fun getTextureLocation(`object`: BlessedContainerEntity?): Identifier {
-        return Identifier(GeckoLib.ModID, "textures/block/blessed_container.png")
-    }
-
-    override fun getAnimationFileLocation(animatable: BlessedContainerEntity?): Identifier {
-        return Identifier(GeckoLib.ModID, "animations/blessed_container.animation.json")
-    }
-
-}
 
 
 

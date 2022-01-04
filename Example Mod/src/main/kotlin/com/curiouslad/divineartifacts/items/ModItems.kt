@@ -1,8 +1,8 @@
 package com.curiouslad.divineartifacts.items
 
 import com.curiouslad.divineartifacts.DivineArtifacts.ITEM_GROUP
-import com.curiouslad.divineartifacts.classes.BlessedContainer
-import com.curiouslad.divineartifacts.classes.BlessedContainerEntity
+import com.curiouslad.divineartifacts.classes.blessedcontainer.BlessedContainer
+import com.curiouslad.divineartifacts.classes.blessedcontainer.BlessedContainerEntity
 import com.curiouslad.divineartifacts.classes.ChannelingTable
 import com.curiouslad.divineartifacts.classes.ChannelingTableEntity
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings
